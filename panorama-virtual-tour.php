@@ -302,62 +302,91 @@ class PanoramaVirtualTour{
             }
         }
 
+        $metadata = array(
+        	array(
+        		'name'=>'metabox_tour_logo_url',
+        		'meta_field'=>'pvt_meta_logo_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_folder_location',
+        		'meta_field'=>'pvt_meta_folder_location',
+        	),
+        	array(
+        		'name'=>'metabox_tour_homepage_url',
+        		'meta_field'=>'pvt_meta_homepage_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_email_address',
+        		'meta_field'=>'pvt_meta_email_address',
+        	),
+        	array(
+        		'name'=>'metabox_tour_contact_number',
+        		'meta_field'=>'pvt_meta_contact_number',
+        	),
+        	array(
+        		'name'=>'metabox_tour_address',
+        		'meta_field'=>'pvt_meta_address',
+        	),
+        	array(
+        		'name'=>'metabox_tour_shopinfo',
+        		'meta_field'=>'pvt_meta_shopinfo',
+        	),
+        	array(
+        		'name'=>'metabox_tour_place',
+        		'meta_field'=>'pvt_meta_place',
+        	),
+        	array(
+        		'name'=>'metabox_tour_facebook_url',
+        		'meta_field'=>'pvt_meta_facebook_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_twitter_url',
+        		'meta_field'=>'pvt_meta_twitter_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_linkedin_url',
+        		'meta_field'=>'pvt_meta_linkedin_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_googleplug_url',
+        		'meta_field'=>'pvt_meta_googleplus_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_line_url',
+        		'meta_field'=>'pvt_meta_line_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_youtube_url',
+        		'meta_field'=>'pvt_meta_youtube_url',
+        	),
+        	array(
+        		'name'=>'metabox_tour_copyright_text',
+        		'meta_field'=>'pvt_meta_copyright_text',
+        	),
+        	array(
+        		'name'=>'metabox_tour_meta_keywords',
+        		'meta_field'=>'pvt_meta_keywords',
+        	),
+        	array(
+        		'name'=>'metabox_tour_meta_description',
+        		'meta_field'=>'pvt_meta_description',
+        	),
+        	array(
+        		'name'=>'metabox_tour_meta_custom_css',
+        		'meta_field'=>'pvt_meta_custom_css',
+        	),
+        	array(
+        		'name'=>'metabox_tour_embed_map_url',
+        		'meta_field'=>'pvt_meta_embed_map_url',
+        	)
+        );
 
-        #Sanitize the user input.
-        $logo_url 			= sanitize_text_field($_POST['metabox_tour_logo_url']);
-        $folder_location 	= sanitize_text_field($_POST['metabox_tour_folder_location']);
-        $homepage_url 		= sanitize_text_field($_POST['metabox_tour_homepage_url']);
-
-        $email_address 		= sanitize_text_field($_POST['metabox_tour_email_address']);
-        $contact_number 	= sanitize_text_field($_POST['metabox_tour_contact_number']);
-
-        $address 			= sanitize_text_field($_POST['metabox_tour_address']);
-        $shopinfo 			= sanitize_text_field($_POST['metabox_tour_shopinfo']);
-        $place 				= sanitize_text_field($_POST['metabox_tour_place']);
-
-        $facebook_url		= sanitize_text_field($_POST['metabox_tour_facebook_url']);
-        $twitter_url		= sanitize_text_field($_POST['metabox_tour_twitter_url']);
-        $linkedin_url		= sanitize_text_field($_POST['metabox_tour_linkedin_url']);
-        $googleplus_url		= sanitize_text_field($_POST['metabox_tour_googleplug_url']);
-        $line_url			= sanitize_text_field($_POST['metabox_tour_line_url']);
-        $youtube_url		= sanitize_text_field($_POST['metabox_tour_youtube_url']);
-
-        $copyright_text		= sanitize_text_field($_POST['metabox_tour_copyright_text']);
-
-        $meta_keywords		= sanitize_text_field($_POST['metabox_tour_meta_keywords']);
-        $meta_description	= sanitize_text_field($_POST['metabox_tour_meta_description']);
-        
-        $custom_css			= sanitize_text_field($_POST['metabox_tour_meta_custom_css']);
-
-        $embed_map_ur		= sanitize_text_field($_POST['metabox_tour_embed_map_url']);
-
-        #Update the meta field.
-        update_post_meta( $post_id, 'pvt_meta_logo_url', $logo_url);
-        update_post_meta( $post_id, 'pvt_meta_folder_location', $folder_location);
-        update_post_meta( $post_id, 'pvt_meta_homepage_url', $homepage_url);
-        update_post_meta( $post_id, 'pvt_meta_email_address', $email_address);
-        update_post_meta( $post_id, 'pvt_meta_contact_number', $contact_number);
-
-        update_post_meta( $post_id, 'pvt_meta_address', $address);
-        update_post_meta( $post_id, 'pvt_meta_shopinfo', $shopinfo);
-        update_post_meta( $post_id, 'pvt_meta_place', $place);
-
-        update_post_meta( $post_id, 'pvt_meta_facebook_url', $facebook_url);
-        update_post_meta( $post_id, 'pvt_meta_twitter_url', $twitter_url);
-        update_post_meta( $post_id, 'pvt_meta_linkedin_url', $linkedin_url);
-        update_post_meta( $post_id, 'pvt_meta_googleplus_url', $googleplus_url);
-        update_post_meta( $post_id, 'pvt_meta_line_url', $line_url);
-        update_post_meta( $post_id, 'pvt_meta_youtube_url', $youtube_url);
-
-        update_post_meta( $post_id, 'pvt_meta_copyright_text', $copyright_text);
-
-        update_post_meta( $post_id, 'pvt_meta_keywords', $meta_keywords);
-        update_post_meta( $post_id, 'pvt_meta_description', $meta_description);
-        
-        update_post_meta( $post_id, 'pvt_meta_custom_css', $custom_css);
-        update_post_meta( $post_id, 'pvt_meta_embed_map_url', $embed_map_ur);
-
-
+        foreach ($metadata as $key => $value) {
+        	#Sanitize the user input.
+        	$data = sanitize_text_field($_POST[$value['name']]);
+        	#Update the meta field.
+        	update_post_meta( $post_id, $value['meta_field'], $data);
+        }
 	}
 
 	public function install(){
