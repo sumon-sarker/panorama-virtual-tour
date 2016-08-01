@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Panorama - VirtualTours
+Plugin Name: Panorama - Virtual Tours
 Plugin URI:  https://github.com/sumon-sarker/panorama-virtual-tour
 Description: A panorama is any wide-angle view or representation of a physical space, this plugin will help you to add your ready tour to your wordpress site.
 Version:     1.0
