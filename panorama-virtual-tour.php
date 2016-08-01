@@ -19,11 +19,15 @@ class PanoramaVirtualTour{
 	private $pvt_text_domain 	= 'sumon-pvt';
 
 	function __construct(){
-		add_action( 'init', array($this,'setup_post_type'));
-		add_action( 'save_post',array($this,'save_post_metas'));
+		add_action('init', array($this,'setup_post_type'));
+		add_action('save_post',array($this,'save_post_metas'));
 
 		register_activation_hook( __FILE__,array($this,'install'));
 		register_deactivation_hook( __FILE__, array($this,'uninstall'));
+	}
+
+	public function pvt_get_post_type(){
+		return $this->pvt_post_type;
 	}
 
 	public function setup_post_type(){
@@ -73,18 +77,132 @@ class PanoramaVirtualTour{
 	}
 
 	public function set_metaboxes(){
-		add_meta_box(
-                'metabox_tour_folder_location',
-                __( 'Tour folder location', $this->pvt_text_domain ),
-                array( $this, 'metabox_tour_folder_location' ),
+
+		$meta_boxes = array(
+			array(
+				'id'		=>'metabox_tour_folder_location',
+				'title'		=>'<span style="color:red">{Main}</span> Tour folder location',
+				'function' 	=>'metabox_tour_folder_location'
+			),
+			#Logo=============================================
+			array(
+				'id'		=>'metabox_tour_logo_url',
+				'title'		=>'<span style="color:red">{Logo}</span> Logo URL',
+				'function' 	=>'demo'
+			),
+			#Homepage=========================================
+			array(
+				'id'		=>'metabox_tour_homepage_url',
+				'title'		=>'<span style="color:yellow">{Homepage}</span> Homepage URL',
+				'function' 	=>'demo'
+			),
+			#SocialMedia======================================
+			array(
+				'id'		=>'metabox_tour_facebook_url',
+				'title'		=>'<span style="color:green">{SocialMedia}</span> Facebook URL',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_twitter_url',
+				'title'		=>'<span style="color:green">{SocialMedia}</span> Twitter URL',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_linkedin_url',
+				'title'		=>'<span style="color:green">{SocialMedia}</span> Linkedin URL',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_googleplug_url',
+				'title'		=>'<span style="color:green">{SocialMedia}</span> Google+ URL',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_line_url',
+				'title'		=>'<span style="color:green">{SocialMedia}</span> LINE URL',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_youtube_url',
+				'title'		=>'<span style="color:green">{SocialMedia}</span> Youtube URL',
+				'function' 	=>'demo'
+			),
+			#Contact==========================================
+			array(
+				'id'		=>'metabox_tour_email_address',
+				'title'		=>'<span style="color:#3cf">{Contact}</span> Email address',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_contact_number',
+				'title'		=>'<span style="color:#3cf">{Contact}</span> Contact number',
+				'function' 	=>'demo'
+			),
+			#Location=========================================
+			array(
+				'id'		=>'metabox_tour_address',
+				'title'		=>'<span style="color:blue">{Location}</span> Address',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_shopinfo',
+				'title'		=>'<span style="color:blue">{Location}</span> Shop information',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_place',
+				'title'		=>'<span style="color:blue">{Location}</span> Place',
+				'function' 	=>'demo'
+			),
+			#OtherInfo========================================
+			array(
+				'id'		=>'metabox_tour_copyright_text',
+				'title'		=>'<span style="color:lime">{OtherInfo}</span> Copyright text',
+				'function' 	=>'demo'
+			),
+			#MetaInfo=========================================
+			array(
+				'id'		=>'metabox_tour_meta_keywords',
+				'title'		=>'<span style="color:#A52A2A">{MetaInfo}</span> Meta keywords',
+				'function' 	=>'demo'
+			),
+			array(
+				'id'		=>'metabox_tour_meta_description',
+				'title'		=>'<span style="color:#A52A2A">{MetaInfo}</span> Mets descriptions',
+				'function' 	=>'demo'
+			),
+			#CustomCSS========================================
+			array(
+				'id'		=>'metabox_tour_meta_custom_css',
+				'title'		=>'<span style="color:#ADFF2F">{CustomCSS}</span> Custom CSS',
+				'function' 	=>'demo'
+			),
+			#Map==============================================
+			array(
+				'id'		=>'metabox_tour_embed_map_url',
+				'title'		=>'<span style="color:#FF1493">{Map}</span> Embed map URL',
+				'function' 	=>'demo'
+			),
+		);
+
+		foreach($meta_boxes as $key => $value) {
+			add_meta_box(
+                $value['id'],
+                __($value['title'],$this->pvt_text_domain),
+                array($this, $value['function']),
                 $this->pvt_post_type,
                 'advanced',
                 'high'
             );
+		}
 	}
 
 	public function metabox_tour_folder_location($post){
 		include_once 'includes/metabox_tour_folder_location.php';
+	}
+
+	public function demo($post){
+		include_once 'includes/metabox_demo.php';
 	}
 
 	public function save_post_metas($post_id){
