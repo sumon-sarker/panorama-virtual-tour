@@ -22,8 +22,17 @@ class PanoramaVirtualTour{
 		add_action('init', array($this,'setup_post_type'));
 		add_action('save_post',array($this,'save_post_metas'));
 
+		add_shortcode('virtual_tour', array($this,'virtual_tour_shortcode'));
+
 		register_activation_hook( __FILE__,array($this,'install'));
 		register_deactivation_hook( __FILE__, array($this,'uninstall'));
+	}
+
+	public function virtual_tour_shortcode($atts){
+		$atts = shortcode_atts(array(
+			'tour-id' => 0
+		),$atts,'virtual_tour');
+		return $atts['tour-id'];
 	}
 
 	public function pvt_get_post_type(){
@@ -80,6 +89,12 @@ class PanoramaVirtualTour{
 	public function set_metaboxes(){
 
 		$meta_boxes = array(
+			#Shortcode========================================
+			array(
+				'id'		=>'metabox_tour_shortcode',
+				'title'		=>'<span style="color:red" class="dashicons dashicons-editor-code"></span> Shortcode',
+				'function' 	=>'metabox_tour_shortcode'
+			),
 			#Logo=============================================
 			array(
 				'id'		=>'metabox_tour_logo_url',
@@ -197,6 +212,10 @@ class PanoramaVirtualTour{
                 'high'
             );
 		}
+	}
+
+	public function metabox_tour_shortcode($post){
+		include_once 'includes/metabox_tour_shortcode.php';
 	}
 
 	public function metabox_tour_folder_location($post){
