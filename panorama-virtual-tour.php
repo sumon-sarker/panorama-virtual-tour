@@ -74,11 +74,7 @@ class PanoramaVirtualTour{
 			'supports'           => array(
 				'title',
 				'editor',
-				#'author',
-				'thumbnail',
-				#'excerpt',
-				#'comments',
-				#'custom-fields'
+				'thumbnail'
 			),
 			'taxonomies'		 => array('category'),
 			'register_meta_box_cb'=>array($this,'set_metaboxes')
@@ -126,34 +122,39 @@ class PanoramaVirtualTour{
 			),
 			#SocialMedia======================================
 			array(
+				'id'		=>'metabox_tour_social_media',
+				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Social Media',
+				'function' 	=>'metabox_tour_social_media'
+			),
+			array(
 				'id'		=>'metabox_tour_facebook_url',
 				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Facebook URL',
-				'function' 	=>'metabox_tour_facebook_url'
+				'function' 	=>'metabox_tour_social_media'
 			),
 			array(
 				'id'		=>'metabox_tour_twitter_url',
 				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Twitter URL',
-				'function' 	=>'metabox_tour_twitter_url'
+				'function' 	=>'metabox_tour_social_media'
 			),
 			array(
 				'id'		=>'metabox_tour_linkedin_url',
 				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Linkedin URL',
-				'function' 	=>'metabox_tour_linkedin_url'
+				'function' 	=>'metabox_tour_social_media'
 			),
 			array(
 				'id'		=>'metabox_tour_googleplug_url',
 				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Google+ URL',
-				'function' 	=>'metabox_tour_googleplug_url'
+				'function' 	=>'metabox_tour_social_media'
 			),
 			array(
 				'id'		=>'metabox_tour_line_url',
 				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> LINE URL',
-				'function' 	=>'metabox_tour_line_url'
+				'function' 	=>'metabox_tour_social_media'
 			),
 			array(
 				'id'		=>'metabox_tour_youtube_url',
 				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Youtube URL',
-				'function' 	=>'metabox_tour_youtube_url'
+				'function' 	=>'metabox_tour_social_media'
 			),
 			#Location=========================================
 			array(
@@ -250,28 +251,8 @@ class PanoramaVirtualTour{
 		include_once 'includes/metabox_tour_place.php';
 	}
 
-	public function metabox_tour_facebook_url($post){
-		include_once 'includes/metabox_tour_facebook_url.php';
-	}
-
-	public function metabox_tour_twitter_url($post){
-		include_once 'includes/metabox_tour_twitter_url.php';
-	}
-
-	public function metabox_tour_linkedin_url($post){
-		include_once 'includes/metabox_tour_linkedin_url.php';
-	}
-
-	public function metabox_tour_googleplug_url($post){
-		include_once 'includes/metabox_tour_googleplug_url.php';
-	}
-
-	public function metabox_tour_line_url($post){
-		include_once 'includes/metabox_tour_line_url.php';
-	}
-
-	public function metabox_tour_youtube_url($post){
-		include_once 'includes/metabox_tour_youtube_url.php';
+	public function metabox_tour_social_media($post){
+		include_once 'includes/metabox_tour_social_media.php';
 	}
 
 	public function metabox_tour_copyright_text($post){
