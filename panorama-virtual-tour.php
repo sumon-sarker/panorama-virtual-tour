@@ -100,7 +100,7 @@ class PanoramaVirtualTour{
 			#TourFolder
 			array(
 				'id'		=>'metabox_tour_folder_location',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-marker"></span> Tour folder location',
+				'title'		=>'<span style="color:green" class="dashicons dashicons-category"></span> Tour folder location',
 				'function' 	=>'metabox_tour_folder_location'
 			),
 			#Homepage=========================================
@@ -127,16 +127,11 @@ class PanoramaVirtualTour{
 				'title'		=>'<span style="color:lime" class="dashicons dashicons-warning"></span> Copyright text',
 				'function' 	=>'metabox_tour_copyright_text'
 			),
-			#MetaInfo=========================================
+			#Meta Informations================================
 			array(
-				'id'		=>'metabox_tour_meta_keywords',
-				'title'		=>'<span style="color:#A52A2A" class="dashicons dashicons-clipboard"></span> Meta keywords',
-				'function' 	=>'metabox_tour_meta_keywords'
-			),
-			array(
-				'id'		=>'metabox_tour_meta_description',
-				'title'		=>'<span style="color:#A52A2A" class="dashicons dashicons-clipboard"></span> Mets descriptions',
-				'function' 	=>'metabox_tour_meta_description'
+				'id'		=>'metabox_tour_meta_informations',
+				'title'		=>'<span style="color:#A52A2A" class="dashicons dashicons-clipboard"></span> Meta Informations',
+				'function' 	=>'metabox_tour_meta_informations'
 			),
 			#CustomCSS========================================
 			array(
@@ -192,12 +187,8 @@ class PanoramaVirtualTour{
 		include_once 'includes/metabox_tour_copyright_text.php';
 	}
 
-	public function metabox_tour_meta_keywords($post){
-		include_once 'includes/metabox_tour_meta_keywords.php';
-	}
-
-	public function metabox_tour_meta_description($post){
-		include_once 'includes/metabox_tour_meta_description.php';
+	public function metabox_tour_meta_informations($post){
+		include_once 'includes/metabox_tour_meta_informations.php';
 	}
 
 	public function metabox_tour_meta_custom_css($post){
