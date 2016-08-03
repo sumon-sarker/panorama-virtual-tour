@@ -109,68 +109,17 @@ class PanoramaVirtualTour{
 				'title'		=>'<span style="color:lime" class="dashicons dashicons-admin-home"></span> Homepage URL',
 				'function' 	=>'metabox_tour_homepage_url'
 			),
-			#Contact==========================================
-			array(
-				'id'		=>'metabox_tour_email_address',
-				'title'		=>'<span style="color:#3cf" class="dashicons dashicons-email"></span> Email address',
-				'function' 	=>'metabox_tour_email_address'
-			),
-			array(
-				'id'		=>'metabox_tour_contact_number',
-				'title'		=>'<span style="color:#3cf" class="dashicons dashicons-email"></span> Contact number',
-				'function' 	=>'metabox_tour_contact_number'
-			),
 			#SocialMedia======================================
 			array(
 				'id'		=>'metabox_tour_social_media',
 				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Social Media',
 				'function' 	=>'metabox_tour_social_media'
 			),
+			#Contact Address==========================================
 			array(
-				'id'		=>'metabox_tour_facebook_url',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Facebook URL',
-				'function' 	=>'metabox_tour_social_media'
-			),
-			array(
-				'id'		=>'metabox_tour_twitter_url',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Twitter URL',
-				'function' 	=>'metabox_tour_social_media'
-			),
-			array(
-				'id'		=>'metabox_tour_linkedin_url',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Linkedin URL',
-				'function' 	=>'metabox_tour_social_media'
-			),
-			array(
-				'id'		=>'metabox_tour_googleplug_url',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Google+ URL',
-				'function' 	=>'metabox_tour_social_media'
-			),
-			array(
-				'id'		=>'metabox_tour_line_url',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> LINE URL',
-				'function' 	=>'metabox_tour_social_media'
-			),
-			array(
-				'id'		=>'metabox_tour_youtube_url',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-networking"></span> Youtube URL',
-				'function' 	=>'metabox_tour_social_media'
-			),
-			#Location=========================================
-			array(
-				'id'		=>'metabox_tour_address',
-				'title'		=>'<span style="color:blue" class="dashicons dashicons-location-alt"></span> Address',
-				'function' 	=>'metabox_tour_address'
-			),
-			array(
-				'id'		=>'metabox_tour_shopinfo',
-				'title'		=>'<span style="color:blue" class="dashicons dashicons-location-alt"></span> Shop information',
-				'function' 	=>'metabox_tour_shopinfo'
-			),
-			array(
-				'id'		=>'metabox_tour_place',
-				'title'		=>'<span style="color:blue" class="dashicons dashicons-location-alt"></span> Place',
-				'function' 	=>'metabox_tour_place'
+				'id'		=>'metabox_tour_contact_address',
+				'title'		=>'<span style="color:blue" class="dashicons dashicons-location-alt"></span> Contact Address',
+				'function' 	=>'metabox_tour_contact_address'
 			),
 			#OtherInfo========================================
 			array(
@@ -231,24 +180,8 @@ class PanoramaVirtualTour{
 		include_once 'includes/metabox_tour_homepage_url.php';
 	}
 
-	public function metabox_tour_email_address($post){
-		include_once 'includes/metabox_tour_email_address.php';
-	}
-
-	public function metabox_tour_contact_number($post){
-		include_once 'includes/metabox_tour_contact_number.php';
-	}
-
-	public function metabox_tour_address($post){
-		include_once 'includes/metabox_tour_address.php';
-	}
-
-	public function metabox_tour_shopinfo($post){
-		include_once 'includes/metabox_tour_shopinfo.php';
-	}
-
-	public function metabox_tour_place($post){
-		include_once 'includes/metabox_tour_place.php';
+	public function metabox_tour_contact_address($post){
+		include_once 'includes/metabox_tour_contact_address.php';
 	}
 
 	public function metabox_tour_social_media($post){
