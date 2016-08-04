@@ -97,11 +97,11 @@ class PanoramaVirtualTour{
 				'title'		=>'<span style="color:red" class="dashicons dashicons-awards"></span> Logo URL',
 				'function' 	=>'metabox_tour_logo_url'
 			),
-			#TourFolder
+			#Tour Settings====================================
 			array(
-				'id'		=>'metabox_tour_folder_location',
-				'title'		=>'<span style="color:green" class="dashicons dashicons-category"></span> Tour folder location',
-				'function' 	=>'metabox_tour_folder_location'
+				'id'		=>'metabox_tour_settings',
+				'title'		=>'<span style="color:green" class="dashicons dashicons-category"></span> Tour Settings',
+				'function' 	=>'metabox_tour_settings'
 			),
 			#Homepage=========================================
 			array(
@@ -163,8 +163,8 @@ class PanoramaVirtualTour{
 		include_once 'includes/metabox_tour_shortcode.php';
 	}
 
-	public function metabox_tour_folder_location($post){
-		include_once 'includes/metabox_tour_folder_location.php';
+	public function metabox_tour_settings($post){
+		include_once 'includes/metabox_tour_settings.php';
 	}
 
 	public function metabox_tour_logo_url($post){
@@ -228,12 +228,16 @@ class PanoramaVirtualTour{
 
         $metadata = array(
         	array(
-        		'name'=>'metabox_tour_logo_url',
-        		'meta_field'=>'pvt_meta_logo_url',
-        	),
-        	array(
         		'name'=>'metabox_tour_folder_location',
         		'meta_field'=>'pvt_meta_folder_location',
+        	),
+        	array(
+        		'name'=>'metabox_tour_type',
+        		'meta_field'=>'pvt_meta_tour_type',
+        	),
+        	array(
+        		'name'=>'metabox_tour_logo_url',
+        		'meta_field'=>'pvt_meta_logo_url',
         	),
         	array(
         		'name'=>'metabox_tour_homepage_url',
