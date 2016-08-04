@@ -51,6 +51,8 @@ $tour_assets = plugins_url('panorama-virtual-tour');
 	<![endif]-->
 	<link type="text/css" href="<?php echo $tour_assets .'/css/jquery-ui.min.css'; ?>" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $tour_assets .'/css/panorama-virtual-tour.css'; ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $tour_assets .'/css/panorama-virtual-'.$post_metas['pvt_meta_tour_type'][0].'.css'; ?>" />
+	<style type="text/css"><?php echo $post_metas['pvt_meta_custom_css'][0] ?></style>
 	<script type="text/javascript">
 		function readDeviceOrientation() {
 			var winH = window.innerHeight ? window.innerHeight : jQuery(window).height();

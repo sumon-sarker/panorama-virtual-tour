@@ -1,0 +1,22 @@
+#SketchMap,#SocialMediaWrapper{
+	bottom: 100px;
+}
+#SocialMediaWrapper{
+	left: 25%;
+}
+@media screen and (max-width:768px){
+	#SocialMediaWrapper {
+		left: 2%;
+		bottom: 160px;
+	}
+}
+@media screen and (max-width:480px){
+	#SketchMap{
+		bottom: 100px;
+	}
+}
+@media screen and (max-width:375px){
+	#SketchMap{
+		bottom: 200px;
+	}
+}
